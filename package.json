@@ -1,0 +1,33 @@
+{
+  "name": "stream-throttle2",
+  "version": "0.1.0",
+  "description": "stream-throttle rewritten with ECMA Script 2017.",
+  "main": "lib/",
+  "scripts": {
+    "build": "babel ./src/ -d ./lib/",
+    "prepare": "npm run build",
+    "dev": "nodemon --watch src --watch test/dev.js --exec 'npm run test-dev'",
+    "test-dev": "npm run-script build && node ./test/dev.js"
+  },
+  "repository": "https://github.com/Paosder/stream-throttle2.git",
+  "author": "Paosder <kimnamwun@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "stream",
+    "throttle",
+    "node"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "nodemon": "^1.17.4"
+  },
+  "dependencies": {
+    "limiter": "^1.1.3"
+  }
+}
