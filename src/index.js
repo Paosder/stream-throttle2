@@ -32,4 +32,20 @@ class Throttle extends Transform {
   }
 }
 
-export default Throttle;
+class ThrottleGroup {
+  constructor(opts) {
+    if (opts.rate === undefined || parseInt(opts.rate, 10) < 0) {
+      throw new Error('throttle rate must be set or a positive number');
+    }
+    this.options = {
+      initburst: opts.initburst || 0,
+      rate: opts.rate,
+      chunksize: opts.chunksize || this.rate / 10,
+    };
+  }
+  throttle() {
+    return new Throttle(this.options);
+  }
+}
+
+export default { Throttle, ThrottleGroup };
