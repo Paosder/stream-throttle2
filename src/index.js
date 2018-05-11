@@ -1,7 +1,7 @@
 import { Transform } from 'stream';
 import { TokenBucket } from 'limiter';
 
-class Throttle extends Transform {
+export class Throttle extends Transform {
   constructor(opts) {
     super(opts);
     if (opts.rate === undefined || parseInt(opts.rate, 10) < 0) {
@@ -32,7 +32,7 @@ class Throttle extends Transform {
   }
 }
 
-class ThrottleGroup {
+export class ThrottleGroup {
   constructor(opts) {
     if (opts.rate === undefined || parseInt(opts.rate, 10) < 0) {
       throw new Error('throttle rate must be set or a positive number');

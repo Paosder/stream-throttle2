@@ -1,6 +1,6 @@
 {
   "name": "stream-throttle2",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "stream-throttle rewritten with ECMA Script 2017.",
   "main": "lib/",
   "scripts": {
